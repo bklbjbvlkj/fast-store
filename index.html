@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- صفحة تسجيل الدخول -->
+    <div id="login-page" class="page">
+        <h1>تسجيل الدخول</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="اسم المستخدم" required>
+            <input type="password" id="password" placeholder="كلمة السر" required>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <div id="login-error" style="color: red; display: none;">اسم المستخدم أو كلمة السر غير صحيحة</div>
+    </div>
+    <!-- صفحة إدخال بيانات العميل -->
+    <div id="customer-data-page" class="page hidden">
+        <button class="back-button" onclick="goBack()">الرجوع</button>
+        <h2>ادخل بيانات العميل</h2>
+        <form id="customer-form">
+            <input type="text" id="customer-name" placeholder="اسم العميل" required>
+            <input type="tel" id="customer-phone" placeholder="رقم الهاتف" required>
+            <input type="tel" id="customer-phone2" placeholder="رقم الهاتف الثاني" required>
+            <input type="text" id="customer-address" placeholder="عنوان العميل" required>
+            <label for="payment-method">وسيلة الدفع:</label>
+            <select id="payment-method" required>
+                <option value="cash">كاش</option>
+                <option value="visa">فيزا</option>
+            </select>
+            <button type="submit">إرسال البيانات</button>
+        </form>
+    </div>
+    <!-- صفحة اختيار الفرع -->
+    <div id="branches-page" class="page hidden">
+        <button class="back-button" onclick="goBack()">الرجوع</button>
+        <h2>اختر الفرع</h2>
+        <input type="text" id="search-branch" placeholder="ابحث عن الفرع" oninput="searchBranches()">
+        <ul id="branches-list">
+            <li>سموحة</li>
+            <li>سان ستيفانو</li>
+            <li>سيدي بشر</li>
+            <li>رشدي</li>
+            <li>العجمي</li>
+            <li>كارفور الإسكندرية</li>
+            <li>برج العرب</li>
+            <li>المعادي</li>
+            <li>مدينة نصر</li>
+            <li>6 أكتوبر</li>
+            <li>المنصورة</li>
+            <li>دمياط</li>
+            <li>طنطا</li>
+            <li>المحلة الكبرى</li>
+            <li>دمنهور</li>
+            <li>بورسعيد</li>
+            <li>السويس</li>
+            <li>الإسماعيلية</li>
+            <li>الغردقة</li>
+        </ul>
+    </div>
+
+    <!-- صفحة اختيار القسم -->
+    <div id="departments-page" class="page hidden">
+        <button class="back-button" onclick="goBack()">الرجوع</button>
+        <h2>اختر القسم</h2>
+        <input type="text" id="search-department" placeholder="ابحث عن القسم" oninput="searchDepartments()">
+        <ul id="departments-list">
+            <li>البقالة</li>
+            <li>المخبوزات</li>
+            <li>العصائر الطازجة</li>
+            <li>اللحوم والدواجن</li>
+            <li>الأسماك والمأكولات البحرية</li>
+            <li>الخضروات والفواكه</li>
+            <li>منتجات الألبان</li>
+            <li>المعلبات</li>
+            <li>المكملات الغذائية</li>
+            <li>منتجات العناية الشخصية</li>
+            <li>المنظفات</li>
+            <li>الأجهزة الكهربائية</li>
+            <li>الملابس</li>
+            <li>الأدوات المنزلية</li>
+            <li>قسم العطارة</li>
+        </ul>
+    </div>
+
+    <!-- صفحة المنتجات -->
+    <div id="products-page" class="page hidden">
+        <button class="back-button" onclick="goBack()">الرجوع</button>
+        <h2>المنتجات</h2>
+        <input type="text" id="search-product" placeholder="ابحث عن المنتج" oninput="searchProducts()">
+        <ul id="products-list">
+            <li>
+                <input type="checkbox" id="product-1">
+                <label for="product-1">منتج 1 - الكمية: 90 عبوة - السعر: 35 ج</label>
+            </li>
+            <li>
+                <input type="checkbox" id="product-2">
+                <label for="product-2">منتج 2 - الكمية: 120 عبوة - السعر: 45 ج</label>
+            </li>
+            <li>
+                <input type="checkbox" id="product-3">
+                <label for="product-3">منتج 3 - الكمية: 60 عبوة - السعر: 25 ج</label>
+            </li>
+            <li>
+                <input type="checkbox" id="product-4">
+                <label for="product-4">منتج 4 - الكمية: 150 عبوة - السعر: 50 ج</label>
+            </li>
+            <li>
+                <input type="checkbox" id="product-5">
+                <label for="product-5">منتج 5 - الكمية: 200 عبوة - السعر: 40 ج</label>
+            </li>
+        </ul>
+        <button id="order-button">إرسال الطلب</button>
+        <div id="order-message" style="display: none;">تم إرسال الطلبية للفرع بنجاح!</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
